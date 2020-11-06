@@ -1,0 +1,103 @@
+unit untCPedido;
+
+interface
+
+uses System.SysUtils, Data.Win.ADODB, untDataModuleWK;
+
+ type Tpedido = class
+
+    private
+
+    FGetidpedido: Integer;
+    FGetdataemissao: TDate;
+    FGetidcliente: Integer;
+    FGetvalortotal: Double;
+
+    procedure Setidpedido(const Value: Integer);
+    procedure Setdataemissao(const Value: TDate);
+    procedure Setidcliente(const Value: Integer);
+    procedure Setvalortotal(const Value: Double);
+
+    protected
+
+
+    Public
+
+    property Getidpedido : Integer read FGetidpedido write Setidpedido;
+    property Getdataemissao   : TDate read FGetdataemissao write Setdataemissao;
+    property Getidcliente  :Integer read FGetidcliente write Setidcliente;
+    property Getvalortotal  : Double read FGetvalortotal write Setvalortotal;
+
+    Constructor Create;    // declaração do metodo construtor
+
+    Destructor  Destroy; Override;
+
+    function SalvarPedido : Boolean;
+    end;
+
+implementation
+
+{ Tpedido }
+
+constructor Tpedido.Create;
+begin
+  // metodo contrutor
+  //FGetidpedido := 0;
+  //FGetdataemissao := Date;
+ // FGetidcliente := 0;
+ // FGetvalortotal := 0;
+
+end;
+
+destructor Tpedido.Destroy;
+begin
+  // metodo destrutor
+  inherited;
+end;
+
+procedure Tpedido.Setidpedido(const Value: Integer);
+begin
+  FGetidpedido := Value;
+end;
+
+procedure Tpedido.Setidcliente(const Value: Integer);
+begin
+  FGetidcliente := Value;
+end;
+
+procedure Tpedido.Setdataemissao(const Value: TDate);
+begin
+  FGetdataemissao := Value;
+end;
+
+procedure Tpedido.Setvalortotal(const Value: Double);
+begin
+  FGetvalortotal := Value;
+end;
+
+function Tpedido.SalvarPedido: Boolean;
+  var
+    ibQueryGenerica : TADOQuery;
+begin
+  ibQueryGenerica := TADOQuery.Create(ibQueryGenerica);
+
+  ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
+  ibQueryGenerica.SQL.Add('INSERT INTO cadpedido');
+  ibQueryGenerica.SQL.Add('(dpedido,');
+  ibQueryGenerica.SQL.Add('dataemissao,');
+  ibQueryGenerica.SQL.Add('idcliente,');
+  ibQueryGenerica.SQL.Add('valortotal)');
+  ibQueryGenerica.SQL.Add('VALUES (');
+  ibQueryGenerica.SQL.Add(IntToStr(FGetidpedido) + ',');
+  ibQueryGenerica.SQL.Add(DateToStr(FGetdataemissao) + ',');
+  ibQueryGenerica.SQL.Add(IntToStr(FGetidcliente) + ',');
+  ibQueryGenerica.SQL.Add(FloatToStr(FGetvalortotal)+ ')');
+
+  ibQueryGenerica.ExecSQL;
+
+  ibQueryGenerica.Free;
+
+  Result := True;
+end;
+
+end.

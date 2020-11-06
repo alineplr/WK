@@ -1,0 +1,102 @@
+unit untCPedidoProduto;
+
+interface
+
+uses System.SysUtils, Data.Win.ADODB, untDataModuleWK;
+
+ type TpedidoProduto = class
+
+    private
+
+    FGetidpedido: Integer;
+    FGetidproduto: Integer;
+    FGetquantidade: Double;
+    FGetvalorunit: Double;
+    FGetvalortotalproduto: Double;
+
+    procedure Setidpedido(const Value: Integer);
+    procedure Setidproduto(const Value: Integer);
+    procedure Setquantidade(const Value: Double);
+    procedure Setvalorunit(const Value: Double);
+    procedure Setvalortotalproduto(const Value: Double);
+
+    protected
+
+
+    Public
+
+    property Getidpedido : Integer read FGetidpedido write Setidpedido;
+    property Getdataemissao   : TDate read FGetidproduto write Setidproduto;
+    property Getidcliente  :Integer read FGetquantidade write Setquantidade;
+    property Getvalortotal  : Double read FGetvalorunit write Setvalorunit;
+    property valortotalproduto  : Double read FGetvalortotalproduto write Setvalortotalproduto;
+
+    function ConsultarPedido : Boolean;
+
+    Constructor Create;    // declaração do metodo construtor
+
+    Destructor  Destroy; Override;
+
+    function SalvarPedido : Boolean;
+    end;
+
+implementation
+
+
+
+
+
+
+{ TpedidoProduto }
+
+function TpedidoProduto.ConsultarPedido: Boolean;
+begin
+        //
+end;
+
+constructor TpedidoProduto.Create;
+begin
+  FGetidpedido := 0;
+  FGetidproduto := 0;
+  FGetquantidade := 0;
+  FGetvalorunit := 0;
+  FGetvalortotalproduto := 0;
+end;
+
+destructor TpedidoProduto.Destroy;
+begin
+  //destroi
+  inherited;
+end;
+
+function TpedidoProduto.SalvarPedido: Boolean;
+begin
+
+end;
+
+procedure TpedidoProduto.Setidpedido(const Value: Integer);
+begin
+  FGetidpedido := Value;
+end;
+
+procedure TpedidoProduto.Setidproduto(const Value: Integer);
+begin
+  FGetidproduto := Value;
+end;
+
+procedure TpedidoProduto.Setquantidade(const Value: Double);
+begin
+  FGetquantidade := Value;
+end;
+
+procedure TpedidoProduto.Setvalortotalproduto(const Value: Double);
+begin
+  FGetvalortotalproduto := Value;
+end;
+
+procedure TpedidoProduto.Setvalorunit(const Value: Double);
+begin
+  FGetvalorunit := Value;
+end;
+
+end.

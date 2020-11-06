@@ -1,0 +1,23 @@
+object DataModuleWK: TDataModuleWK
+  OldCreateOrder = False
+  Height = 285
+  Width = 445
+  object SQLConnection1: TSQLConnection
+    ConnectionName = 'ConexaoWK'
+    DriverName = 'MySQL50'
+    LoginPrompt = False
+    Params.Strings = (
+      'GetDriverFunc=getSQLDriverMYSQL50'
+      'LibraryName=dbxopenmysql50.dll'
+      'VendorLib=libmysql.dll'
+      'HostName=localhost'
+      'Database=bdwk'
+      'User_Name=root'
+      'Password=aBm21051982'
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'LocaleCode=0000')
+    Left = 176
+    Top = 88
+  end
+end

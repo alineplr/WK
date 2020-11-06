@@ -1,0 +1,9 @@
+object DataModuleWK: TDataModuleWK
+  OldCreateOrder = False
+  Height = 285
+  Width = 445
+  object ADOConnection1: TADOConnection
+    Left = 96
+    Top = 72
+  end
+end

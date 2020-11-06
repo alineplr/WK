@@ -1,0 +1,76 @@
+unit untCProduto;
+
+interface
+
+uses System.SysUtils, Data.Win.ADODB, untDataModuleWK;
+
+ type TProduto = class
+
+    private
+
+    FGetidproduto: Integer;
+    FGetdescricao: string;
+    FGetprecovenda: Double;
+
+
+    procedure Setidproduto(const Value: Integer);
+    procedure Setdescricao(const Value: string);
+    procedure Setprecovenda(const Value: Double);
+
+
+    protected
+
+
+    Public
+
+    property Getidproduto : Integer read FGetidproduto write Setidproduto;
+    property Getdescricao : Integer read FGetdescricao write Setdescricao;
+    property Getprecovenda   : Integer read FGetprecovenda write Setprecovenda;
+
+
+    Constructor Create;    // declaração do metodo construtor
+
+    Destructor  Destroy; Override;
+
+    end;
+
+implementation
+
+
+
+
+
+
+{ TpedidoProduto }
+
+{ TProduto }
+
+constructor TProduto.Create;
+begin
+  FGetidproduto := 0;
+  FGetdescricao := '';
+  FGetprecovenda := 0;
+end;
+
+destructor TProduto.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TProduto.Setdescricao(const Value: string);
+begin
+  FGetdescricao := Value;
+end;
+
+procedure TProduto.Setidproduto(const Value: Integer);
+begin
+  FGetidproduto := Value;
+end;
+
+procedure TProduto.Setprecovenda(const Value: Double);
+begin
+  FGetprecovenda := Value;
+end;
+
+end.

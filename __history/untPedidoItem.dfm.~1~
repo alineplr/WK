@@ -1,0 +1,1788 @@
+object frmPedidoItem: TfrmPedidoItem
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  BorderWidth = 10
+  Caption = 'frmPedidoItem'
+  ClientHeight = 623
+  ClientWidth = 793
+  Color = 9145227
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Segoe UI Light'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 793
+    Height = 32
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 4105706
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    DesignSize = (
+      793
+      32)
+    object cxLabel1: TcxLabel
+      Left = 8
+      Top = 4
+      Caption = 'ITENS PEDIDO'
+      ParentFont = False
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Segoe UI Light'
+      Style.Font.Style = []
+      Style.StyleController = cxEditStyleController1
+      Style.TextColor = clWhite
+      Style.TextStyle = [fsBold]
+      Style.IsFontAssigned = True
+    end
+    object cxButton4: TcxButton
+      Left = 756
+      Top = 2
+      Width = 34
+      Height = 29
+      Anchors = [akTop, akRight]
+      OptionsImage.Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000001010102000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000010101020000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000009090912686868C82828284E0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000002A2A2A52686868C80A0A
+        0A13000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000090909126A6A6ACD848484FF818181F92828
+        284E000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000002A2A2A52818181F9848484FF6B6B
+        6BCE0A0A0A130000000000000000000000000000000000000000000000000000
+        0000000000000000000001010101676767C7848484FF848484FF848484FF8181
+        81F92828284E0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000002A2A2A52818181F9848484FF848484FF8484
+        84FF686868C80101010100000000000000000000000000000000000000000000
+        00000000000000000000000000002828284D818181F9848484FF848484FF8484
+        84FF818181F92828284E00000000000000000000000000000000000000000000
+        000000000000000000002A2A2A52818181F9848484FF848484FF848484FF8181
+        81F9262626490000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000002828284D818181F9848484FF8484
+        84FF848484FF818181F92828284E000000000000000000000000000000000000
+        0000000000002A2A2A52818181F9848484FF848484FF848484FF818181F92626
+        2649000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000002828284D818181F98484
+        84FF848484FF848484FF818181F92929294F0000000000000000000000000000
+        00002A2A2A52818181F9848484FF848484FF848484FF818181F9262626490000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000002828284D8181
+        81F9848484FF848484FF848484FF818181F92929294F00000000000000002A2A
+        2A52818181F9848484FF848484FF848484FF818181F926262649000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000002828
+        284D818181F9848484FF848484FF848484FF818181F92929294F2A2A2A528181
+        81F9848484FF848484FF848484FF818181F92626264900000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00002828284D818181F9848484FF848484FF848484FF818181F9818181F98484
+        84FF848484FF848484FF818181F9262626490000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000002828284D818181F9848484FF848484FF848484FF848484FF8484
+        84FF848484FF818181F926262649000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000002828284D818181F9848484FF848484FF848484FF8484
+        84FF818181F92626264900000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000002A2A2A52818181F9848484FF848484FF848484FF8484
+        84FF818181F92929294F00000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000002A2A2A52818181F9848484FF848484FF848484FF848484FF8484
+        84FF848484FF818181F92929294F000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00002A2A2A52818181F9848484FF848484FF848484FF818181F9818181F98484
+        84FF848484FF848484FF818181F92929294F0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000002A2A
+        2A52818181F9848484FF848484FF848484FF818181F9262626492828284D8181
+        81F9848484FF848484FF848484FF818181F92929294F00000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000002A2A2A528181
+        81F9848484FF848484FF848484FF818181F92626264900000000000000002828
+        284D818181F9848484FF848484FF848484FF818181F92929294F000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000002A2A2A52818181F98484
+        84FF848484FF848484FF818181F9262626490000000000000000000000000000
+        00002828284D818181F9848484FF848484FF848484FF818181F92929294F0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000002A2A2A52818181F9848484FF8484
+        84FF848484FF818181F926262649000000000000000000000000000000000000
+        0000000000002828284D818181F9848484FF848484FF848484FF818181F92929
+        294F000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000002B2B2B53818181F9848484FF848484FF8484
+        84FF818181F92626264900000000000000000000000000000000000000000000
+        000000000000000000002828284D818181F9848484FF848484FF848484FF8181
+        81F92929294F0000000000000000000000000000000000000000000000000000
+        0000000000000000000001010102666666C5848484FF848484FF848484FF8181
+        81F9262626490000000000000000000000000000000000000000000000000000
+        00000000000000000000000000002828284D818181F9848484FF848484FF8484
+        84FF666666C50101010100000000000000000000000000000000000000000000
+        00000000000000000000000000000808080F696969CA848484FF818181F92626
+        2649000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000002828284D818181F9848484FF6969
+        69CB080808100000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000808080F656565C3262626490000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000002828284D666666C50808
+        0810000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000010101020000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000}
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 1
+      TabStop = False
+      OnClick = cxButton4Click
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 32
+    Width = 793
+    Height = 591
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 0
+      Top = 9
+      Width = 793
+      Height = 41
+      ButtonHeight = 38
+      ButtonWidth = 39
+      Caption = 'ToolBar1'
+      Images = cxImageList1
+      TabOrder = 0
+      object ToolButton3: TToolButton
+        Left = 0
+        Top = 0
+        Caption = 'ToolButton3'
+        ImageIndex = 2
+        OnClick = ToolButton3Click
+      end
+    end
+    object Panel12: TPanel
+      Left = 0
+      Top = 0
+      Width = 793
+      Height = 9
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+    object Panel3: TPanel
+      Left = 0
+      Top = 50
+      Width = 793
+      Height = 541
+      Align = alClient
+      BevelOuter = bvNone
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI Light'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      object edCodProduto: TcxButtonEdit
+        Left = 0
+        Top = 122
+        ParentFont = False
+        Properties.Buttons = <
+          item
+            Default = True
+            Kind = bkEllipsis
+          end>
+        Properties.OnValidate = edCodProdutoPropertiesValidate
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 0
+        Width = 129
+      end
+      object cxLabel11: TcxLabel
+        Left = 0
+        Top = 100
+        Caption = '*C'#243'd. Produto'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.StyleController = cxEditStyleController2
+        Style.IsFontAssigned = True
+      end
+      object edProduto: TcxDBLookupComboBox
+        Left = 135
+        Top = 122
+        DataBinding.DataField = 'ID_PRODUTO'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Properties.ImmediateDropDownWhenActivated = True
+        Properties.ImmediatePost = True
+        Properties.KeyFieldNames = 'ID_PRODUTO'
+        Properties.ListColumns = <
+          item
+            FieldName = 'DESCRICAO'
+          end>
+        Properties.ListSource = dtCliente
+        Properties.OnCloseUp = edProdutoPropertiesCloseUp
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 1
+        Width = 487
+      end
+      object cxLabel12: TcxLabel
+        Left = 132
+        Top = 100
+        Caption = '*Produto'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel8: TcxLabel
+        Left = 628
+        Top = 100
+        Caption = '*Unidade'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edCodCFOP: TcxDBTextEdit
+        Left = 1
+        Top = 177
+        DataBinding.DataField = 'CFOP'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TransparentBorder = True
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 3
+        OnExit = edCodCFOPExit
+        Width = 129
+      end
+      object cxLabel2: TcxLabel
+        Left = 0
+        Top = 155
+        Caption = '*CFOP'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel3: TcxLabel
+        Left = 135
+        Top = 155
+        Caption = '*Descri'#231#227'o'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edCFOP: TcxDBLookupComboBox
+        Left = 136
+        Top = 177
+        DataBinding.DataField = 'ID_CFOP'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Properties.ImmediateDropDownWhenActivated = True
+        Properties.ImmediatePost = True
+        Properties.KeyFieldNames = 'ID_CFOP'
+        Properties.ListColumns = <
+          item
+            FieldName = 'CFOP'
+          end>
+        Properties.ListSource = dtCFOP
+        Properties.OnCloseUp = edCFOPPropertiesCloseUp
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 4
+        Width = 658
+      end
+      object cxDBTextEdit2: TcxDBTextEdit
+        Left = 0
+        Top = 232
+        DataBinding.DataField = 'COMPLEMENTO'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TransparentBorder = True
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 5
+        Width = 793
+      end
+      object cxLabel4: TcxLabel
+        Left = 0
+        Top = 210
+        Caption = 'Complemento'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel5: TcxLabel
+        Left = 0
+        Top = 265
+        Caption = '*Quantidade'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.TextStyle = [fsBold]
+        Style.TransparentBorder = True
+        Style.IsFontAssigned = True
+        StyleDisabled.TextStyle = [fsBold]
+      end
+      object edQuantidade: TcxDBCurrencyEdit
+        Left = 0
+        Top = 287
+        DataBinding.DataField = 'QUANTIDADE'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Properties.DecimalPlaces = 3
+        Properties.DisplayFormat = ',0.000;-,0.000'
+        Properties.OnChange = edQuantidadePropertiesChange
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 6
+        OnKeyPress = edQuantidadeKeyPress
+        Width = 194
+      end
+      object cxLabel6: TcxLabel
+        Left = 197
+        Top = 265
+        Caption = '*Valor Unit.'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.TextStyle = [fsBold]
+        Style.TransparentBorder = False
+        Style.IsFontAssigned = True
+        StyleDisabled.TextStyle = [fsBold]
+      end
+      object edValorUnit: TcxDBCurrencyEdit
+        Left = 200
+        Top = 287
+        DataBinding.DataField = 'VALOR1'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Properties.DecimalPlaces = 6
+        Properties.DisplayFormat = 'R$,0.000000;R$-,0.000000'
+        Properties.EditFormat = ',0.000000;-,0.000000'
+        Properties.OnChange = edValorUnitPropertiesChange
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 7
+        OnKeyPress = edValorUnitKeyPress
+        Width = 194
+      end
+      object cxLabel9: TcxLabel
+        Left = 600
+        Top = 265
+        Caption = '*Valor Total Item'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.TextStyle = [fsBold]
+        Style.TransparentBorder = False
+        Style.IsFontAssigned = True
+        StyleDisabled.TextStyle = [fsBold]
+      end
+      object edValorTotal: TcxDBCurrencyEdit
+        Left = 600
+        Top = 287
+        TabStop = False
+        DataBinding.DataField = 'VALORTOTAL'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 6
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 9
+        Width = 193
+      end
+      object edReducaoBaseCalculo: TcxDBCurrencyEdit
+        Left = 0
+        Top = 342
+        TabStop = False
+        DataBinding.DataField = 'REDUCAOBASECALCULO'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 6
+        Properties.DisplayFormat = ',0.000000;-,0.000000'
+        Properties.EditFormat = ',0.000000;-,0.000000'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 10
+        Width = 194
+      end
+      object cxLabel10: TcxLabel
+        Left = 0
+        Top = 320
+        Caption = '% Red. Base Calculo ICMS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edValorBaseCalculo: TcxDBCurrencyEdit
+        Left = 200
+        Top = 342
+        TabStop = False
+        DataBinding.DataField = 'VALORBASECALC'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 11
+        Width = 194
+      end
+      object cxLabel13: TcxLabel
+        Left = 200
+        Top = 320
+        Caption = 'Valor Base Calculo ICMS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel14: TcxLabel
+        Left = 400
+        Top = 320
+        Caption = 'Aliquota ICMS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edAliquotaICMS: TcxDBCurrencyEdit
+        Left = 400
+        Top = 342
+        TabStop = False
+        DataBinding.DataField = 'ALIQUOTAICMS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = ',0.00;-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 12
+        Width = 194
+      end
+      object edValorNota: TcxDBCurrencyEdit
+        Left = 400
+        Top = 288
+        TabStop = False
+        DataBinding.DataField = 'VALOR2'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 6
+        Properties.DisplayFormat = 'R$,0.000000;R$-,0.000000'
+        Properties.EditFormat = ',0.000000;-,0.000000'
+        Properties.ReadOnly = True
+        Properties.OnChange = edValorNotaPropertiesChange
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 8
+        Width = 194
+      end
+      object cxLabel7: TcxLabel
+        Left = 397
+        Top = 265
+        Caption = '*Valor Unit. Nota'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = [fsBold]
+        Style.TextStyle = [fsBold]
+        Style.TransparentBorder = False
+        Style.IsFontAssigned = True
+        StyleDisabled.TextStyle = [fsBold]
+      end
+      object edUnidade: TcxTextEdit
+        Left = 628
+        Top = 122
+        TabStop = False
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        StyleFocused.Color = 546687743
+        TabOrder = 2
+        Width = 165
+      end
+      object cxLabel15: TcxLabel
+        Left = 600
+        Top = 320
+        Caption = 'Valor Total ICMS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edValorTotalICMS: TcxDBCurrencyEdit
+        Left = 600
+        Top = 342
+        TabStop = False
+        DataBinding.DataField = 'VALORICMS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 13
+        Width = 193
+      end
+      object edPesoBruto: TcxDBCurrencyEdit
+        Left = 200
+        Top = 507
+        TabStop = False
+        DataBinding.DataField = 'PESOBRUTO'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 18
+        Properties.DisplayFormat = ',0.000000'
+        Properties.EditFormat = ',0.000000'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 23
+        Width = 194
+      end
+      object cxLabel17: TcxLabel
+        Left = 200
+        Top = 485
+        Caption = 'Peso Bruto'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel16: TcxLabel
+        Left = 0
+        Top = 485
+        Caption = 'Caixas/Unidade'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edCaixa: TcxDBCurrencyEdit
+        Left = 0
+        Top = 507
+        DataBinding.DataField = 'CAIXA'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        ParentFont = False
+        Properties.DecimalPlaces = 0
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleFocused.Color = 546687743
+        TabOrder = 22
+        Width = 194
+      end
+      object edGrupoProduto: TcxRadioGroup
+        Left = 1
+        Top = 8
+        Caption = 'Grupo Produto'
+        Properties.ImmediatePost = True
+        Properties.Items = <
+          item
+            Caption = 'Mat'#233'ria Prima'
+            Value = 'M'
+          end
+          item
+            Caption = 'Produto Acabado'
+            Value = 'P'
+          end
+          item
+            Caption = 'Taxa Abate'
+            Value = 'T'
+          end>
+        Properties.OnChange = cxRadioGroup1PropertiesChange
+        ItemIndex = 1
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        TabOrder = 40
+        Height = 84
+        Width = 145
+      end
+      object edReducaoBaseCalculoPIS: TcxDBCurrencyEdit
+        Left = 0
+        Top = 398
+        TabStop = False
+        DataBinding.DataField = 'REDUCAOBASECALCULOPIS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 6
+        Properties.DisplayFormat = ',0.000000;-,0.000000'
+        Properties.EditFormat = ',0.000000;-,0.000000'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 14
+        Width = 194
+      end
+      object cxLabel18: TcxLabel
+        Left = 0
+        Top = 376
+        Caption = '% Red. Base Calculo PIS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edValorBaseCalculoPIS: TcxDBCurrencyEdit
+        Left = 200
+        Top = 398
+        TabStop = False
+        DataBinding.DataField = 'VALORBASECALCULOPIS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 15
+        Width = 194
+      end
+      object cxLabel19: TcxLabel
+        Left = 200
+        Top = 376
+        Caption = 'Valor Base Calculo PIS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel20: TcxLabel
+        Left = 400
+        Top = 376
+        Caption = 'Aliquota PIS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edAliquotaIPIS: TcxDBCurrencyEdit
+        Left = 400
+        Top = 398
+        TabStop = False
+        DataBinding.DataField = 'ALIQUOTAPIS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = ',0.00;-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 16
+        Width = 194
+      end
+      object cxLabel21: TcxLabel
+        Left = 600
+        Top = 376
+        Caption = 'Valor Total PIS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edValorTotalIPIS: TcxDBCurrencyEdit
+        Left = 600
+        Top = 398
+        TabStop = False
+        DataBinding.DataField = 'VALORPIS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 17
+        Width = 193
+      end
+      object edReducaoBaseCalculoCOFINS: TcxDBCurrencyEdit
+        Left = 0
+        Top = 454
+        TabStop = False
+        DataBinding.DataField = 'REDUCAOBASECALCULOCOFINS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 6
+        Properties.DisplayFormat = ',0.000000;-,0.000000'
+        Properties.EditFormat = ',0.000000;-,0.000000'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 18
+        Width = 194
+      end
+      object cxLabel22: TcxLabel
+        Left = 0
+        Top = 432
+        Caption = '% Red. Base Calculo COFINS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edValorBaseCalculoCOFINS: TcxDBCurrencyEdit
+        Left = 200
+        Top = 454
+        TabStop = False
+        DataBinding.DataField = 'VALORBASECALCULOCOFINS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 19
+        Width = 194
+      end
+      object cxLabel23: TcxLabel
+        Left = 200
+        Top = 432
+        Caption = 'Valor Base Calculo COFINS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel24: TcxLabel
+        Left = 400
+        Top = 432
+        Caption = 'Aliquota COFINS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edAliquotaCOFINS: TcxDBCurrencyEdit
+        Left = 400
+        Top = 454
+        TabStop = False
+        DataBinding.DataField = 'ALIQUOTACOFINS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = ',0.00;-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 20
+        Width = 194
+      end
+      object cxLabel25: TcxLabel
+        Left = 600
+        Top = 432
+        Caption = 'Valor Total COFINS'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 9145227
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.TextStyle = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object edValorTotalCOFINS: TcxDBCurrencyEdit
+        Left = 600
+        Top = 454
+        TabStop = False
+        DataBinding.DataField = 'VALORCOFINS'
+        DataBinding.DataSource = frmPedidoVenda.dtPedidoItem
+        Enabled = False
+        ParentFont = False
+        Properties.DecimalPlaces = 2
+        Properties.DisplayFormat = 'R$,0.00;R$-,0.00'
+        Properties.EditFormat = ',0.00;-,0.00'
+        Properties.ReadOnly = True
+        Style.Color = clSilver
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI Light'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        StyleDisabled.Color = clSilver
+        StyleDisabled.TextColor = clBlack
+        StyleFocused.Color = 546687743
+        TabOrder = 21
+        Width = 193
+      end
+    end
+  end
+  object cxImageList1: TcxImageList
+    Height = 32
+    Width = 32
+    FormatVersion = 1
+    DesignInfo = 6423240
+    ImageInfo = <
+      item
+        Image.Data = {
+          36100000424D3610000000000000360000002800000020000000200000000100
+          2000000000000010000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000100000002000000030000000400000003000000020000
+          0001000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000100000004000000080000000C0000000E0000000D000000090000
+          0004000000010000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000100000001000000010000
+          0001000000010000000100000001000000010000000100000001000000010000
+          00010000000300000008164531BC1F6044FF1F5F44FF1E5E43FF15432FBC0000
+          0009000000020000000000000000000000000000000000000000000000000000
+          0000000000010000000100000001000000020000000300000004000000050000
+          0005000000060000000600000006000000060000000600000005000000040000
+          0003000000060000000C267757FF7BDCC1FF3DBD92FF3DBE92FF247353FF0000
+          000C000000030000000000000000000000000000000000000000000000000000
+          00010000000200000004000000070000000A0000000E00000011000000130000
+          0015000000170000001700000017000000170000001500000014000000120000
+          00100000000E00000013297A5AFF7DDCC2FF33B98BFF3EC094FF267656FF0000
+          000D000000040000000100000000000000000000000000000000000000010000
+          0003000000070000000E0102041B0B172B5A142B50921A3768B51F427CD51F42
+          7CD5254E95F526529BFF25519AFF234C93F51C4079D51C3F7AD5183364B71127
+          4C940914285F0405062B2B7F5FFF7EDEC4FF34BA8DFF3FC096FF287A5AFF0000
+          000E000000060000000300000003000000020000000100000000000000020000
+          000703050A2019345CA12B5798F35D84B8FF8BAACDFFA7C3DBFFAFD4E7FF89CC
+          E5FF6BD4EEFF41B7E8FF35A3E2FF2A8BD4FF4088CAFF88B6DDFF9BC1DEFF9CBC
+          DAFF93ACCFFF8295B9F92E8363FF80DFC5FF35BC8FFF42C299FF2B7D5DFF0000
+          00130000000E0000000C0000000B000000070000000300000001000000030000
+          000D23487CCA679ECFFFB4DEF4FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8ED7FF81B4E0FF499185FF2D7E5FFF2D7C
+          5EFF2C7B5CFF2B795BFF318666FF46C59CFF36BE91FF45C49BFF2D8262FF276F
+          52FF266E51FF256D4FFF246C4EFF194C37BC0000000700000002000000040000
+          00113060A5FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8ED6FF8DBBE2FF369071FF87E1C9FF49C7
+          A0FF49C7A0FF49C79FFF48C69FFF47C79EFF38BF93FF47C69EFF46C69EFF47C6
+          9EFF46C69DFF45C69DFF45C59CFF2B7F60FF0000000A00000003000000040000
+          00123263A6FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8ED6FF8DBBE2FF399474FFAAEAD9FF61D1
+          B0FF61D1AFFF61D1AFFF61D1AFFF61D1AFFF61D0AEFF61D1AEFF61D1AEFF61D0
+          AEFF61D1AEFF61D0AEFF6FD5B7FF2E8363FF0000000A00000003000000040000
+          00113567A8FF91CEF0FFBCE6F9FFE5F8FAFFECFAFAFFEAFBFAFFD7F5FAFFACEC
+          F8FF7FE0F4FF56C2ECFF49B0E7FF3D9DDDFF95C2E5FF3C9878FFC1F1E5FFC1F1
+          E5FFC1F1E5FFC1F1E5FFC1F1E5FFAFECDCFF69D4B5FF79DABDFF94E3CDFFC1F1
+          E5FFC1F1E4FFC1F1E4FFC1F0E4FF318767FF0000000900000002000000040000
+          00103669ABFF9AD2F1FFC4E9F9FFCDE5F0FFB2CEE5FF94B8DBFF6C9ECFFF4F92
+          CBFF2975BDFF1863B5FF155CB1FF145AAFFF7EA6D4FF56AB9DFF43AA89FF43A9
+          88FF43A787FF42A685FF3A9676FFB5EEDFFF72D8BBFF81DDC4FF379171FF3E9F
+          7FFF3D9E7DFF3C9D7CFF3B9C7BFF2C725AC00000000600000001000000040000
+          000F386DACFF7FBAE4FF81B2DDFF9EC1E0FFB2CEE5FFBDD9EAFFB7DEEEFF8CD3
+          ECFF6BD5EFFF41B7E8FF35A3E2FF298CD6FF3A87CEFF7BB2DDFF9BC6E5FF9FC4
+          E4FF95B8DEFF8CAFD6FF3D9979FFBAF0E3FF7ADCC0FF89E1C9FF399474FF0000
+          000D000000090000000800000007000000050000000200000001000000040000
+          000E2D5485C980BEE7FFB8E2F7FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8CD2FF4FADE3FF66B9
+          ECFF5DAEEAFF9FC9EBFF3F9E7EFFC1F0E6FF82DFC6FF92E3CEFF3C9878FF0000
+          0008000000030000000200000002000000010000000100000000000000030000
+          000D3D72B1FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAEEBFFA1CCEDFF41A281FFC6F3E8FF8AE2CBFF99E6D3FF3E9D7CFF0000
+          0006000000020000000000000000000000000000000000000000000000030000
+          000D3F75B3FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAEEBFFA1CDEEFF44A585FFD6F7EFFFD6F7EFFFD6F7EFFF41A080FF0000
+          0005000000010000000000000000000000000000000000000000000000030000
+          000D4078B5FF91CEF0FFBCE6F9FFE5F8FAFFECFAFAFFEAFBFAFFD7F5FAFFACEC
+          F8FF7FE0F4FF56C2ECFF49B0E7FF3D9EDEFF308DD4FF3B9AD8FF5CB6E7FF6FBF
+          EEFF63B1ECFF9AC9EFFF62BCABFF4AB594FF49B593FF49B493FF36856CBF0000
+          0003000000010000000000000000000000000000000000000000000000030000
+          000C437BB6FF9AD2F1FFC4E9F9FFCDE5F0FFB2CEE5FF94B8DBFF6C9ECFFF4F92
+          CBFF2975BDFF1863B5FF155CB1FF145AB0FF165FB5FF1A65B7FF307EC5FF4993
+          D3FF59A2E0FF6FB5EAFF9ECBEDFF99B3D3FF0000001300000007000000030000
+          0001000000000000000000000000000000000000000000000000000000030000
+          000A467EB9FF7FBAE4FF81B2DDFF9EC1E0FFB2CEE5FFBDD9EAFFB7DEEEFF8CD3
+          ECFF6BD5EFFF41B7E8FF35A3E2FF298CD6FF1E77C8FF2683CCFF3D94D4FF4491
+          D3FF337BC8FF246DBFFF4088CEFF3A6FADFF0000000F00000005000000010000
+          0000000000000000000000000000000000000000000000000000000000030000
+          000936628EC780BEE7FFB8E2F7FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF469DE2FF428ED2FF2E5786C90000000D00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00094984BCFF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF48A0E5FF55A6E2FF3E75B2FF0000000C00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00094B87BEFF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF48A0E5FF55A6E2FF4178B4FF0000000C00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00084D8AC0FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF48A0E5FF55A6E2FF427AB7FF0000000B00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00074F8CC2FF91CEF0FFBEE6F9FFE5F9FCFFE8FAFDFFE8FAFEFFE5F9FEFFDCF6
+          FDFFDEF7FDFFDDF6FEFFD7F4FEFFCCEFFCFFB1DFF6FFACDEF7FF9DDAF6FF92D4
+          F5FF76C0F1FF4BA1E6FF55A6E2FF447EB8FF0000000B00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          0007518FC4FFDAF2FBFFF4FDFEFFF3FDFEFFE8FAFFFFDCF8FEFFD4F5FDFFCBF2
+          FDFFC7F1FCFFBEEDFCFFB8ECFDFFB3E9FDFFB0E8FCFFB0E7FCFFABE5FCFFA9E4
+          FBFFA5E3FBFF9EDDFAFF82C9F1FF4680BAFF0000000A00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          00065391C6FFFAFEFFFFE8FBFEFFD4F5FEFFCEF5FEFFCAF3FDFFC7F1FEFFC3F0
+          FDFFBFEEFDFFBBEDFDFFB7EBFCFFB2E9FCFFAEE6FCFFAAE5FCFFA5E3FBFFA1E1
+          FBFF9CE0FBFF99DEFBFF96DDFBFF4983BCFF0000000800000002000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          00044D83A8CBAFD6ECFFDEF4FBFFE3FAFEFFDCF7FEFFD3F4FDFFCDF3FDFFC5F0
+          FDFFC2EFFCFFBBECFDFFB5EAFDFFB0E8FDFFAEE7FCFFABE5FCFFA6E4FBFFA3E2
+          FBFF9FE0FBFF97DAF8FF7ABEE6FF43769ECC0000000600000002000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0002060A0D14365C76915E9CC8EE85BCE1FFA0CEE9FFB1DAF0FFC1E5F6FFBEE5
+          F6FFC5EBF9FFCCF1FDFFC6EFFDFFB8E6F9FFA8DCF3FFA3DAF3FF91CCECFF81C0
+          E5FF6DADD9FF5390BEEE3154709205090C160000000300000001000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000100000001000000030204050B1B2D3A49305269823F6B8AA84E84AACE4D84
+          AACE5793C0E85FA2D3FF5FA2D2FF5692BEE84A80A7CE4A80A6CE3C6687A92D4E
+          6683182A384C0204050D00000004000000020000000100000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000100000001000000020000000300000003000000040000
+          0004000000040000000500000005000000050000000500000005000000040000
+          0003000000030000000200000001000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000001000000010000
+          0001000000010000000100000001000000010000000100000001000000010000
+          0001000000010000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36100000424D3610000000000000360000002800000020000000200000000100
+          2000000000000010000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000002000000050000
+          000A0000000B0000000700000003000000010000000000000001000000040000
+          00080000000B0000000B00000006000000020000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000000000000000000000000000000000000000000020000000601010315170F
+          53AA201571E107051A420000000A0000000400000002000000040000000A0705
+          1A43201571E1170F52AB01010317000000070000000200000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000100000005010103131B135FBD4951
+          BBFF505ECDFF2C278CF207051A430000000B000000070000000B07051A442D28
+          8CF24F5CCCFF3F46B7FF1B135FBF010103160000000600000001000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          00010000000100000001000000010000000300000009191159B5525DC1FF4C60
+          D6FF4356D3FF4D5ED1FF2D278CF207051A440000001107051A452E298CF25262
+          D3FF4052D0FF4454D2FF444BBBFF181059B60000000A00000002000000000000
+          0000000000000000000100000001000000020000000200000003000000040000
+          0004000000040000000400000004000000060000000C2B2687E77D94E1FF4A5F
+          D7FF4358D3FF4458D3FF5060D2FF2D288DF20D092F6F2F2A8CF25668D4FF4254
+          D2FF3E51D1FF4254D3FF6476D6FF251D7BE70000000A00000002000000000000
+          0001000000010000000300000005000000080000000A0000000D0000000F0000
+          001000000011000000120000001200000013000000150C0A2551494BA9F7829B
+          E7FF4B60D6FF465AD4FF475BD4FF5263D3FF3837A2FE596CD6FF4659D3FF4256
+          D2FF4459D3FF6C81DEFF3C3D9EF70A08214A0000000700000002000000010000
+          0002000000050000000B010204160B172A54142B508E1B3767B21F427DD31F42
+          7DD3254E95F526529BFF25519AFF234C92F5325186D77186AAE5556192DA4D51
+          B0FC87A1E9FF4D64D7FF485ED7FF495FD6FF5469DAFF495CD5FF455AD5FF475E
+          D6FF758CE1FF4142A2F70B09234A000000090000000300000001000000010000
+          00060305091C19345C9D2C5699F25D84B8FF8BAACDFFA7C3DBFFAFD4E7FF89CC
+          E5FF6BD4EEFF41B7E8FF35A3E2FF2A8CD5FF2276C3FF428ECCFF98BFDEFF8198
+          C8FF5257B5FF849FE8FF4D66D9FF4A62D8FF4A61D8FF4A60D7FF4A60D7FF748D
+          E2FF4547A6F70B0A234B00000009000000030000000100000000000000020000
+          000A23487DC9679ECFFFB4DEF4FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8CD2FF62B5E3FFA7D1
+          EAFF798DCAFF515ABDFF6681E2FF4E66DAFF4D65DAFF4D65D9FF586FDDFF474C
+          B5FE14123C720000000E00000005000000020000000000000000000000030000
+          000D3060A5FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF4098D5FF9DCFEBFF92AF
+          D8FF4645A9FF788FE3FF6D87E5FF718AE8FF718AE7FF6D85E6FF657EE2FF6478
+          DCFF352F96F209061C4000000008000000030000000100000000000000040000
+          000E3263A6FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF388BD1FF8BBEE3FF8AADD9FF4A4B
+          AEFF89A1EAFF849DEEFF8099EDFF829AEDFF9EBAF4FF7D97EBFF7790EAFF778F
+          E9FF7286E1FF373296F109061C3D000000060000000200000001000000030000
+          000D3567A8FF91CEF0FFBCE6F9FFE5F8FAFFECFAFAFFEAFBFAFFD7F5FAFFACEC
+          F8FF7FE0F4FF56C2ECFF49B0E7FF3D9DDDFF8CBFE5FF84A8D7FF5051B4FF99B0
+          EFFF91A9F2FF8CA5F1FF8DA6F1FFA9C6F4FF6971BFFEAAC8F4FF86A0EFFF8098
+          EDFF7F98ECFF8093E6FF393397F109061C3C0000000400000001000000030000
+          000C3669ABFF9AD2F1FFC4E9F9FFCDE5F0FFB2CEE5FF94B8DBFF6C9ECFFF4F92
+          CBFF2975BDFF1863B5FF155CB1FF145AAFFF7EA5D4FF4D4FBAFFA5C0F3FF9BB3
+          F6FF97B0F5FF98B1F4FFB1CEF8FF6168C4FF1B1A497C5B60BAF6AFCDF7FF8EA6
+          F1FF88A0F0FF889FEFFF8DA4EAFF373398E80000000600000001000000030000
+          000B386DACFF7FBAE4FF81B2DDFF9EC1E0FFB2CEE5FFBDD9EAFFB7DEEEFF8CD3
+          ECFF6BD5EFFF41B7E8FF35A3E2FF298BD5FF82B3DEFF5F6CC6FF9BB2E9FFAFCA
+          FAFFA3BCF9FFB5D3FAFF646BC8FF7F8FC4FF000000160F0F28445D61BCF6B2D1
+          F9FF97B0F4FF9FBAF6FF92A8E3FF2B2976B20000000500000001000000030000
+          000A2D5585C880BEE7FFB8E2F7FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF6CAADDFF90BEE3FF6471CCFF9FB8
+          EBFFB7D5F9FF6770CCFF89A6D9FF728AAADE0000001000000008100F29405E63
+          BEF6B3D2F7FF9AB1E8FF373688C2020206100000000300000001000000020000
+          000A3D72B1FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF2581CEFF79B6E1FFA1CFECFF6A76
+          CFFF666BD2FF8DAEE2FFA4CFEDFF4875AFFF0000000E00000004000000041010
+          293E5555B8E8323082B70202060F000000030000000100000000000000030000
+          000A3F75B3FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2F8FD4FF8CCAEDFFAAD6
+          F2FFA5D1F2FF9AC9EFFF68AFE4FF3465A8FF0000000D00000003000000010000
+          0002000000040000000300000002000000010000000000000000000000020000
+          00094078B5FF91CEF0FFBCE6F9FFE5F8FAFFECFAFAFFEAFBFAFFD7F5FAFFACEC
+          F8FF7FE0F4FF56C2ECFF49B0E7FF3D9EDEFF308DD4FF3B9AD8FF5CB6E7FF6FBE
+          EDFF63B1ECFF48A0E5FF55A6E2FF3668AAFF0000000C00000003000000000000
+          0000000000010000000100000000000000000000000000000000000000020000
+          0009437BB6FF9AD2F1FFC4E9F9FFCDE5F0FFB2CEE5FF94B8DBFF6C9ECFFF4F92
+          CBFF2975BDFF1863B5FF155CB1FF145AB0FF165FB5FF1A65B7FF307EC5FF4993
+          D3FF59A2E0FF5AABE8FF60ADE5FF376BACFF0000000C00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          0008467EB9FF7FBAE4FF81B2DDFF9EC1E0FFB2CEE5FFBDD9EAFFB7DEEEFF8CD3
+          ECFF6BD5EFFF41B7E8FF35A3E2FF298CD6FF1E77C8FF2683CCFF3D94D4FF4491
+          D3FF337BC8FF246DBFFF4088CEFF3A6FAEFF0000000B00000003000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          000736628DC680BEE7FFB8E2F7FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF469DE2FF428ED2FF2E5786C70000000A00000002000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00074984BCFF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF48A0E5FF55A6E2FF3E75B2FF0000000900000002000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00074B87BEFF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF48A0E5FF55A6E2FF4178B4FF0000000900000002000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          00064D8AC0FF91CEF0FFBCE6F9FFE4F8FAFFEAFAFAFFE8FBFAFFD1F4F9FFA1E9
+          F7FF6EDAF2FF41B7E8FF35A3E2FF2A8FD8FF217FCEFF2B8DD3FF4FAEE4FF66BA
+          EDFF5EAFECFF48A0E5FF55A6E2FF427AB7FF0000000900000002000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          00064F8CC2FF91CEF0FFBEE6F9FFE5F9FCFFE8FAFDFFE8FAFEFFE5F9FEFFDCF6
+          FDFFDEF7FDFFDDF6FEFFD7F4FEFFCCEFFCFFB1DFF6FFACDEF7FF9DDAF6FF92D4
+          F5FF76C0F1FF4BA1E6FF55A6E2FF447EB8FF0000000800000002000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          0005518FC4FFDAF2FBFFF4FDFEFFF3FDFEFFE8FAFFFFDCF8FEFFD4F5FDFFCBF2
+          FDFFC7F1FCFFBEEDFCFFB8ECFDFFB3E9FDFFB0E8FCFFB0E7FCFFABE5FCFFA9E4
+          FBFFA5E3FBFF9EDDFAFF82C9F1FF4680BAFF0000000800000002000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          00045391C6FFFAFEFFFFE8FBFEFFD4F5FEFFCEF5FEFFCAF3FDFFC7F1FEFFC3F0
+          FDFFBFEEFDFFBBEDFDFFB7EBFCFFB2E9FCFFAEE6FCFFAAE5FCFFA5E3FBFFA1E1
+          FBFF9CE0FBFF99DEFBFF96DDFBFF4983BCFF0000000600000002000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          00034E83A9CAAFD6ECFFDEF4FBFFE3FAFEFFDCF7FEFFD3F4FDFFCDF3FDFFC5F0
+          FDFFC2EFFCFFBBECFDFFB5EAFDFFB0E8FDFFAEE7FCFFABE5FCFFA6E4FBFFA3E2
+          FBFF9FE0FBFF97DAF8FF7ABEE6FF43759ECB0000000500000001000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0001060A0D12365C77905E9CC8EE85BCE1FFA0CEE9FFB1DAF0FFC1E5F6FFBEE5
+          F6FFC5EBF9FFCCF1FDFFC6EFFDFFB8E6F9FFA8DCF3FFA3DAF3FF91CCECFF81C0
+          E5FF6DADD9FF5390BEEE3154709105090C140000000200000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000000000001000000020204050A1B2D3A49305169813F6B8AA74E83AACD4D84
+          AACE5793C0E85FA2D3FF5FA2D2FF5692BEE84A80A7CE4A80A6CE3B6686A82D4D
+          6682182A38490204050B00000003000000020000000100000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000001000000010000000200000003000000030000
+          0003000000030000000400000004000000040000000400000003000000030000
+          0003000000020000000100000001000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000010000
+          0001000000010000000100000001000000010000000100000001000000010000
+          0001000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36100000424D3610000000000000360000002800000020000000200000000100
+          2000000000000010000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000001000000020000000400000005000000060000
+          0006000000060000000600000006000000070000000700000007000000050000
+          0004000000020000000100000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000100000002000000070000001000000015000000170000
+          0017000000160000001500000016000000180000001900000018000000160000
+          000F000000070000000300000001000000000000000000000000000000000000
+          0000000000000000000100000001000000010000000100000001000000010000
+          00010000000100000001000000050000000F8B4D2AFF894C28FF874A28FF8448
+          26FF834725FF41231297115936FF115734FF105534FF0F5332FF0F5332FF072A
+          1893000000140000000800000003000000010000000000000000000000000000
+          0001000000020000000300000005000000060000000600000006000000060000
+          000600000006000000060000000A00000018A56A40FFE9B97AFFE8B777FFE7B7
+          76FFE8B675FFA06640FF1B754EFF3CD3A1FF3AD3A0FF39D29FFF39D29FFF0D69
+          41FF082C1A940000001500000008000000020000000100000000000000000000
+          0002000000060000000D00000013000000150000001600000016000000160000
+          001600000016000000160000001A00000026A96F46FFEABE81FFEABD80FFE9BC
+          7EFFEABB7CFFB78157FF1D7852FF40D5A4FF3FD5A4FF3DD4A3FF3DD4A1FF0B7A
+          4CFF115B38FF0C234D9300000012000000060000000200000000000000010000
+          00030000000D402B26BF583C34FF593D34FF583D34FF5C4138FFC89263FFC084
+          54FFBD8151FFBB7D4DFFB6784AFFCDAF9AFFAE754AFFECC288FFECC387FFEBC0
+          85FFECC083FFB78157FF1E7C55FF44D7A8FF43D7A7FF42D7A6FF41D6A5FF0B7A
+          4CFF14623FFF1866B4FF0C264E900000000C0000000300000001000000000000
+          0004000000115C4037FF886B61FF785B4FFF785A4FFF6D5246FFE8C594FFE4BC
+          85FFE4BA83FFE3B981FFDFB57DFFE6D0B5FFB47A50FFEFC990FFEEC78FFFEEC6
+          8EFFEDC48BFFB78157FF207F58FF48D9ABFF47DAAAFF46D9AAFF45D9A9FF0B7A
+          4CFF166944FF167FCCFF1D52A0FF000000100000000400000000000000000000
+          00050000001260443BFF8C7165FF7B5E52FF7B5D51FF70554AFFDFBE90FFD9B3
+          7FFFD8B17DFFD7B17BFFD5AE78FFE5D0B6FFC9A382FFDAB88EFFFFF4C9FFFFF4
+          C9FFFFF4C9FFDBBB91FF64764FFF60C0A3FFA0FFECFFA0FFECFFA0FFECFF56BD
+          9DFF1A714BFF167FCCFF215CA7FF000000110000000400000000000000000000
+          00040000001263473DFF90756AFF7E6154FF7D6053FF74594EFFFAF6F2FFF8F3
+          EEFFF8F2EDFFF7F2ECFFF6EFEBFFF5F1EDFFF2EEECFFD2B59FFFBA8359FFB881
+          58FFB88056FFB77F55FFB67E53FF3D758FFF22865EFF22845DFF22845CFF2183
+          5CFF20825AFF167FCCFF2666AEFF000000100000000400000000000000000000
+          000400000011664A40FF947A6EFF816357FF806356FF785C50FFF9F6F3FFF9F3
+          F0FFF8F2EFFFF7F2EDFFF7F1EDFFF5F0EBFFF5F1EDFFF2EFECFF9BA1D6FF768B
+          E2FFA4BFFFFFA4BFFFFFA4BFFFFF7E92DEFF3B6AC0FF71BCE3FFA8EFFFFFA8EF
+          FFFFA8EFFFFF60B8E6FF2C71B6FF0000000D0000000300000000000000000000
+          0004000000106A4E42FF997E72FF84675AFF836559FF7C6053FFFAF7F4FFF9F4
+          F0FFF9F3EFFFF8F3EFFFF8F2EEFFF7F2EDFFF6F0ECFFF5F1EDFFF3EFEDFFADB5
+          E2FF6A7FDCFF6A7EDAFF6A7DDAFF6A7CD9FF687CD8FF7496B0FF3D90CAFF3C8E
+          C9FF3B8BC7FF3A88C6FF3986C4FF000000090000000200000000000000000000
+          0004000000106E5146FF9D8376FF866B5DFF86695CFF7F6457FFFBF8F5FFF9F5
+          F1FFF9F4F1FFF8F3F0FFF8F3EEFFF7F3EEFFF7F1EDFFF6F0EBFFF6F2EFFFF6F2
+          F0FFF4F0EDFFF1EEEBFFF1EEEBFFF1EDEBFFB0A29DFFB2A59FFFB5A7A3FFA498
+          94FF0000001C0000000F00000008000000040000000100000000000000000000
+          00040000000F715549FFA0887AFF8A6D5FFF896D5EFF836759FFFBF8F6FFFAF5
+          F2FFF9F5F1FFF8F4F0FFF8F3F0FFF8F3EFFFF8F2EEFFF7F1EDFFF7F0ECFFF5EF
+          EBFFF5EFEAFFF3EDE8FFF4ECE7FFF2ECE6FF6E5348FF72544AFF795D53FF573D
+          36FF000000140000000600000002000000010000000000000000000000000000
+          00030000000E75594CFFA58C7FFF8C7162FF8C7061FF866B5CFFFBFAF7FFFBF8
+          F6FFFBF8F6FFFBF8F5FFFAF7F4FFFBF7F3FFF9F6F3FFF9F5F2FFF9F5F1FFF9F4
+          F1FFF8F4F0FFF7F2EFFFF7F2EDFFF7F1EDFF73574CFF74564CFF7C6055FF593F
+          37FF000000110000000400000000000000000000000000000000000000000000
+          00030000000D795C4EFFA99084FF907465FF8F7364FF8A6F60FF886E5EFF886C
+          5EFF866B5DFF856A5CFF85695BFF83685AFF7F6557FF795F53FF785E52FF785D
+          51FF775C50FF765B50FF765A4FFF75594EFF755A4EFF75584EFF7F6258FF5A40
+          38FF000000100000000400000000000000000000000000000000000000000000
+          00030000000C7C5F52FFAD9588FF937768FF927767FF917566FF907565FF8F73
+          65FF8E7263FF8D7163FF8C7161FF8B7061FF8A6E5FFF7A5F55FF785C53FF785C
+          51FF785B52FF785B51FF775B51FF765A50FF765A4FFF76594FFF80655AFF5C42
+          3AFF0000000F0000000400000000000000000000000000000000000000000000
+          00030000000C806356FFB19A8CFF967B6BFF957A6AFF947869FF947868FF9277
+          67FF927566FF917565FF907365FF8F7363FF8D7263FF856A5CFF7A5E54FF795E
+          53FF795D53FF785D52FF785C52FF775C52FF775B51FF775B50FF83685CFF5E43
+          3BFF0000000E0000000400000000000000000000000000000000000000000000
+          00030000000B846758FFB49D8FFF997E6DFFA08677FFA18879FFA18878FF9F86
+          78FF9F8474FF9D8375FF9C8272FF9B8071FF997E6FFF977C6EFF856B60FF8368
+          5EFF81675DFF81665DFF80655BFF80645BFF7F645AFF7C6157FF856960FF5F45
+          3DFF0000000E0000000300000000000000000000000000000000000000000000
+          00030000000A886C5CFFB8A294FF9C8170FFA68C7CFF6B5046FF553931FF5E44
+          3CFF614840FF60483FFF5F473EFF5E463DFF5D453DFF5D443CFF5C433BFF5A43
+          3AFF5A4239FF5A4139FF594039FF584038FF634A41FF7E6359FF866D62FF6047
+          3EFF0000000D0000000300000000000000000000000000000000000000000000
+          0002000000098A6F5EFFBAA797FF9F8473FFA78E7FFF563933FF4E423CFF664D
+          44FFF1E4DCFFE8D5C9FFE8D5C8FFE6D4C8FFE8D4C7FFE6D4C7FFE6D3C5FFE6D3
+          C5FFEDDED4FFECDCD4FFECDDD2FFEBDBD2FF5B423AFF806359FF887065FF6248
+          40FF0000000C0000000300000000000000000000000000000000000000000000
+          0002000000098E7361FFBEAA9BFFA28876FFA89181FF563B33FF4F433CFF6A51
+          48FFF8EFE5FFEFDED0FFEAD9CBFFE8D6C9FFE8D4C8FFE8D4C8FFE6D4C7FF4C39
+          32FF614840FF60483FFF60463EFFEDDFD4FF5D453CFF7F655AFF8B7267FF634A
+          42FF0000000B0000000300000000000000000000000000000000000000000000
+          000200000008917663FFC1AD9FFFA58A79FFAC9281FF573A34FF51443EFF6F55
+          4CFFFAF2E9FFF6E8D8FFF5E6D7FFF2E2D4FFECDBCFFFE9D7CBFFE8D5C9FF4B39
+          32FF614842FF644B43FF634A42FFEEE0D7FF61483FFF80665BFF8D746AFF654B
+          43FF0000000B0000000300000000000000000000000000000000000000000000
+          000200000007957967FFC5B1A3FFA78D7AFFAE9484FF583C34FF52463EFF7359
+          4FFFFBF4ECFFF7E9DAFFF6E8D9FFF5E7D8FFF4E6D7FFF0E1D4FFECDACFFF4A39
+          32FF5F463FFF604740FF684E46FFF0E4DBFF654C43FF81675CFF8F766DFF664D
+          44FF0000000A0000000200000000000000000000000000000000000000000000
+          000200000007987C69FFC7B5A4FFAA917DFFB09685FF593C35FF52473FFF765D
+          53FFFCF6EEFFF8EBDCFFF7EADBFFF6E8DAFFF5E7D9FFF5E6D8FFF3E3D6FF4838
+          32FF5C413BFF5D433DFF6C5249FFF1E6DEFF695047FF81675DFF917A70FF684F
+          46FF000000090000000200000000000000000000000000000000000000000000
+          0001000000069A7F6BFFCBB7A9FFAC9280FFB29987FF593D36FF534740FF7A60
+          56FFFDF7F0FFF9ECDDFFF8EBDCFFF8EADBFFF7E9DAFFF5E7D9FFF5E7D9FF4737
+          32FF593F39FF594039FF70564CFFF2E8E1FF6D544BFF82685DFF947C72FF6950
+          46FF000000080000000200000000000000000000000000000000000000000000
+          0001000000059D816DFFCDB9ABFFB79F8CFFB39A87FF5B3D37FF544841FF7E64
+          5AFFFDF8F2FFFAEDDEFFF9EDDDFFF8ECDDFFF8EADBFFF7E9DBFFF6E8DAFF4636
+          30FF463631FF473632FF463632FFF4EBE6FF72584FFF896F64FF968075FF6A51
+          48FF000000070000000200000000000000000000000000000000000000000000
+          0001000000049C816CFFCEBBADFFCEBCADFFD0BEAFFF5B3E37FF554942FF8065
+          5CFFFEF9F3FFFEF9F3FFFDF9F2FFFDF8F2FFFDF7F1FFFCF7F1FFFCF6F0FFFBF6
+          EFFFFBF4EFFFFAF4EEFFF9F2ECFFF6EEEAFF765C52FFAC978FFFA9958CFF6A52
+          48FF000000060000000200000000000000000000000000000000000000000000
+          000100000003776254BFA08470FFA08670FFA1856FFF6D5046FF5B3E37FF785C
+          53FFA9948BFFA8938AFFA69188FFA58F86FFA38D83FFA18B81FF9F887FFF9C85
+          7CFF9A837AFF998178FF977F75FF957D75FF765C53FF6D554BFF6B5349FF503E
+          37BF000000040000000100000000000000000000000000000000000000000000
+          0000000000010000000200000003000000040000000400000004000000040000
+          0004000000040000000400000004000000050000000500000005000000050000
+          0005000000050000000500000005000000050000000500000005000000050000
+          0004000000020000000000000000000000000000000000000000000000000000
+          0000000000000000000000000001000000010000000100000001000000010000
+          0001000000010000000100000001000000010000000100000001000000010000
+          0001000000010000000100000001000000010000000100000001000000010000
+          0001000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end>
+  end
+  object restProduto: TRESTDWClientSQL
+    FieldDefs = <>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    MasterCascadeDelete = True
+    BinaryRequest = False
+    Datapacks = -1
+    DataCache = False
+    Params = <
+      item
+        DataType = ftString
+        Name = 'vIDGRUPO'
+        ParamType = ptInput
+      end>
+    DataBase = DataModule1.RESTDWDataBase1
+    SQL.Strings = (
+      'select'
+      '    P.ID_PRODUTO,'
+      '    P.CODIGO,'
+      '    P.DESCRICAO,'
+      '    C.DESCRICAOCURTA,'
+      '    P.PESOLIQUIDO,'
+      '    P.PESOEMBALAGEM,'
+      '    P.ID_UNIDADE,'
+      '    P.ID_GRUPOPRODUTO'
+      'from CADPRODUTO P'
+      'inner join CADUNIDADE C on P.ID_UNIDADE = C.ID_UNIDADE'
+      'where P.ID_GRUPOPRODUTO = :vIDGRUPO'
+      '  and P.ATIVO = '#39'S'#39
+      '  and P.FORNECIDOTERCEIRO = '#39'N'#39
+      'order by P.DESCRICAO')
+    CacheUpdateRecords = True
+    AutoCommitData = True
+    AutoRefreshAfterCommit = True
+    RaiseErrors = True
+    ActionCursor = crSQLWait
+    ReflectChanges = False
+    Left = 384
+    object restProdutoID_PRODUTO: TIntegerField
+      FieldName = 'ID_PRODUTO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object restProdutoCODIGO: TStringField
+      FieldName = 'CODIGO'
+    end
+    object restProdutoDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 200
+    end
+    object restProdutoDESCRICAOCURTA: TStringField
+      FieldName = 'DESCRICAOCURTA'
+      Size = 100
+    end
+    object restProdutoPESOLIQUIDO: TSingleField
+      FieldName = 'PESOLIQUIDO'
+    end
+    object restProdutoPESOEMBALAGEM: TSingleField
+      FieldName = 'PESOEMBALAGEM'
+    end
+    object restProdutoID_UNIDADE: TIntegerField
+      FieldName = 'ID_UNIDADE'
+    end
+    object restProdutoID_GRUPOPRODUTO: TIntegerField
+      FieldName = 'ID_GRUPOPRODUTO'
+    end
+  end
+  object dtCliente: TDataSource
+    DataSet = restProduto
+    Left = 384
+    Top = 48
+  end
+  object restCFOP: TRESTDWClientSQL
+    FieldDefs = <>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    MasterCascadeDelete = True
+    BinaryRequest = False
+    Datapacks = -1
+    DataCache = False
+    Params = <>
+    DataBase = DataModule1.RESTDWDataBase1
+    SQL.Strings = (
+      'select C.*, C.CODIGO || '#39' - '#39' || DESCRICAO CFOP from CADCFOP C'
+      'order by CODIGO')
+    CacheUpdateRecords = True
+    AutoCommitData = False
+    AutoRefreshAfterCommit = False
+    RaiseErrors = True
+    ActionCursor = crSQLWait
+    ReflectChanges = False
+    Left = 448
+    object restCFOPID_CFOP: TIntegerField
+      FieldName = 'ID_CFOP'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object restCFOPCODIGO: TStringField
+      FieldName = 'CODIGO'
+      Size = 10
+    end
+    object restCFOPDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 100
+    end
+    object restCFOPINTERNA: TStringField
+      FieldName = 'INTERNA'
+      Size = 1
+    end
+    object restCFOPCFOP: TStringField
+      FieldName = 'CFOP'
+      Size = 113
+    end
+  end
+  object dtCFOP: TDataSource
+    DataSet = restCFOP
+    Left = 448
+    Top = 48
+  end
+  object restRegraICMS: TRESTDWClientSQL
+    FieldDefs = <>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    MasterCascadeDelete = True
+    BinaryRequest = False
+    Datapacks = -1
+    DataCache = False
+    Params = <>
+    DataBase = DataModule1.RESTDWDataBase1
+    CacheUpdateRecords = True
+    AutoCommitData = False
+    AutoRefreshAfterCommit = False
+    RaiseErrors = True
+    ActionCursor = crSQLWait
+    ReflectChanges = False
+    Left = 512
+  end
+  object cxEditStyleController2: TcxEditStyleController
+    Style.Color = clBlack
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clBlack
+    Style.Font.Height = -13
+    Style.Font.Name = 'Segoe UI Light'
+    Style.Font.Style = []
+    Style.TextStyle = [fsBold]
+    Style.IsFontAssigned = True
+    Left = 712
+    Top = 48
+    PixelsPerInch = 96
+  end
+  object cxEditStyleController1: TcxEditStyleController
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWhite
+    Style.Font.Height = -16
+    Style.Font.Name = 'Segoe UI Light'
+    Style.Font.Style = []
+    Style.TextStyle = [fsBold]
+    Style.IsFontAssigned = True
+    Left = 712
+    PixelsPerInch = 96
+  end
+end

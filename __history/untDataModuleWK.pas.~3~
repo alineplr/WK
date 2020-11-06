@@ -1,0 +1,26 @@
+unit untDataModuleWK;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DBXMySQL, Data.DB, Data.SqlExpr;
+
+type
+  TDataModuleWK = class(TDataModule)
+    SQLConnection1: TSQLConnection;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModuleWK: TDataModuleWK;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

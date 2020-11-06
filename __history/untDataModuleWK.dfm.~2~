@@ -1,0 +1,25 @@
+object DataModuleWK: TDataModuleWK
+  OldCreateOrder = False
+  Height = 285
+  Width = 445
+  object SQLConnectionWK: TSQLConnection
+    ConnectionName = 'MySQLConnection'
+    DriverName = 'MySQL'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=MySQL'
+      'HostName=localhost'
+      'Database=bdwk'
+      'User_Name=root'
+      'Password=aBm21051982'
+      'ServerCharSet='
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'LocaleCode=0000'
+      'Compressed=False'
+      'Encrypted=False'
+      'ConnectTimeout=60')
+    Left = 80
+    Top = 88
+  end
+end
