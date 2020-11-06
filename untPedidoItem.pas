@@ -4,46 +4,12 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
-  cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore, dxSkinBlack,
-  dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom,
-  dxSkinDarkSide, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
-  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
-  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
-  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
-  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
-  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
-  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
-  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
-  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue, cxLabel, Vcl.ExtCtrls, dxSkinscxPCPainter,
-  dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDWConstsData,
-  uRESTDWPoolerDB, cxCurrencyEdit, cxDBEdit, cxDropDownEdit, cxLookupEdit,
-  cxDBLookupEdit, cxDBLookupComboBox, cxTextEdit, cxMaskEdit, cxButtonEdit,
-  System.ImageList, Vcl.ImgList, Vcl.ComCtrls, Vcl.ToolWin, cxPC, cxClasses,
-  Vcl.Menus, Vcl.StdCtrls, cxButtons, uDWDataset, cxGroupBox, cxRadioGroup, untCProduto;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,  Data.DB, System.ImageList, Vcl.ImgList, Vcl.ComCtrls, Vcl.ToolWin,
+  Vcl.Menus, Vcl.StdCtrls,  untCProduto,  Vcl.ExtCtrls;
 
 type
   TfrmPedidoItem = class(TForm)
     Panel1: TPanel;
-    cxLabel1: TcxLabel;
-    restProduto: TRESTDWClientSQL;
-    dtCliente: TDataSource;
-    restProdutoID_PRODUTO: TIntegerField;
-    restProdutoCODIGO: TStringField;
-    restProdutoDESCRICAO: TStringField;
-    restProdutoDESCRICAOCURTA: TStringField;
-    restProdutoPESOLIQUIDO: TSingleField;
-    restProdutoPESOEMBALAGEM: TSingleField;
-    restProdutoID_UNIDADE: TIntegerField;
-    cxButton4: TcxButton;
-    restProdutoID_GRUPOPRODUTO: TIntegerField;
     Panel2: TPanel;
     edCodigo: TEdit;
     edDescricao: TEdit;
@@ -57,9 +23,9 @@ type
     Label5: TLabel;
     Panel3: TPanel;
     Button1: TButton;
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    Label7: TLabel;
+    Button2: TButton;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
-    procedure cxButton4Click(Sender: TObject);
     procedure edQuantidadeKeyPress(Sender: TObject; var Key: Char);
     procedure edCodigoExit(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -67,6 +33,7 @@ type
     procedure edQuantidadeExit(Sender: TObject);
     procedure edValorUnitExit(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
         Produto : TProduto;
@@ -116,6 +83,8 @@ begin
       Exit;
     end;
 
+  try
+
   frmPedidoVenda.restPedidoItem.FieldByName('idproduto').AsInteger := Produto.Getidproduto;
   frmPedidoVenda.restPedidoItem.FieldByName('produto').AsString := Produto.Getdescricao;
   frmPedidoVenda.restPedidoItem.FieldByName('quantidade').AsFloat := StrToFloat(edQuantidade.Text);
@@ -125,20 +94,21 @@ begin
   frmPedidoVenda.restPedidoItem.Post;
 
   Close;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
-procedure TfrmPedidoItem.cxButton4Click(Sender: TObject);
+procedure TfrmPedidoItem.Button2Click(Sender: TObject);
 begin
-  //if (frmPedidoVenda.restProdutoItem.State = dsInsert) or(frmPedidoVenda.restProdutoItem.State = dsEdit) then
-  //  begin
-  //    frmPedidoVenda.restProdutoItem.Cancel;
- //   end;
   Close;
 end;
 
 procedure TfrmPedidoItem.edCodigoExit(Sender: TObject);
 begin
+  try
 
   if edCodigo.Text = '' then
     edCodigo.Text := '0';
@@ -147,7 +117,6 @@ begin
   if not Produto.ConsultarProduto then
     ShowMessage('Códgo de produto inválido!');
 
-  //restPedidoItem.FieldByName('idproduto').AsInteger := Produto.Getidproduto;
   edValorUnit.Text := FormatFloat('#,##0.00;(#,##0.00)',Produto.Getprecovenda);
   edDescricao.Text := Produto.Getdescricao;
 
@@ -158,11 +127,16 @@ begin
     edValorUnit.Text := FormatFloat('#,##0.00;(#,##0.00)',0);
 
     edValorTotal.Text := FormatFloat('#,##0.00;(#,##0.00)',(StrToFloat(edQuantidade.Text) * StrToFloat(edValorUnit.Text)));
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
 procedure TfrmPedidoItem.edQuantidadeExit(Sender: TObject);
 begin
+  try
   if edQuantidade.Text = '' then
     edQuantidade.Text := FormatFloat('#,##0.00;(#,##0.00)',0);
 
@@ -170,6 +144,10 @@ begin
     edValorUnit.Text := FormatFloat('#,##0.00;(#,##0.00)',0);
 
     edValorTotal.Text := FormatFloat('#,##0.00;(#,##0.00)',(StrToFloat(edQuantidade.Text) * StrToFloat(edValorUnit.Text)));
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 end;
 
 procedure TfrmPedidoItem.edQuantidadeKeyPress(Sender: TObject; var Key: Char);
@@ -180,6 +158,7 @@ end;
 
 procedure TfrmPedidoItem.edValorUnitExit(Sender: TObject);
 begin
+  try
   if edQuantidade.Text = '' then
     edQuantidade.Text := FormatFloat('#,##0.00;(#,##0.00)',0);
 
@@ -187,21 +166,23 @@ begin
     edValorUnit.Text := FormatFloat('#,##0.00;(#,##0.00)',0);
 
     edValorTotal.Text := FormatFloat('#,##0.00;(#,##0.00)',(StrToFloat(edQuantidade.Text) * StrToFloat(edValorUnit.Text)));
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 end;
 
 procedure TfrmPedidoItem.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+  try
   if frmPedidoVenda.restPedidoItem.State in [dsInsert,dsEdit] then
     frmPedidoVenda.restPedidoItem.Cancel;
 
   FreeAndNil(Produto);
-end;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
 
-procedure TfrmPedidoItem.FormKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-(*if Key = VK_RETURN then
-   perform(WM_NEXTDLGCTL,0,0);     *)
+  end;
 end;
 
 procedure TfrmPedidoItem.FormKeyPress(Sender: TObject; var Key: Char);
@@ -214,6 +195,7 @@ end;
 
 procedure TfrmPedidoItem.FormShow(Sender: TObject);
 begin
+  try
   if vAcaoItem = 0 then
     begin
     frmPedidoVenda.restPedidoItem.Insert;
@@ -238,6 +220,10 @@ begin
     end;
 
   Produto := TProduto.Create;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 end;
 
 end.

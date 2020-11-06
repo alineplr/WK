@@ -4,45 +4,19 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
-  cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore, dxSkinBlack,
-  dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom,
-  dxSkinDarkSide, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
-  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
-  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
-  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
-  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
-  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
-  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
-  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
-  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue, cxLabel, Vcl.ExtCtrls, cxClasses, dxSkinscxPCPainter,
-  dxBarBuiltInMenu, cxPC, cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBEdit,
-  cxTextEdit, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage,
-  cxNavigator, Data.DB, cxDBData, cxGridLevel, cxGridCustomView,
-  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
-  cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxButtonEdit, Vcl.Menus,
-  cxGroupBox, cxCurrencyEdit, Vcl.StdCtrls, cxButtons, Datasnap.DBClient,
-  uDWConstsData, uRESTDWPoolerDB, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  System.ImageList, Vcl.ImgList, Vcl.ComCtrls, Vcl.ToolWin,DateUtils, Vcl.Grids,
-  Vcl.DBGrids, uDWDataset, cxRadioGroup, UCBase, Vcl.Mask, Vcl.DBCtrls,
-  Data.Win.ADODB, untCPedido, untCPedidoProduto, untCProduto, untPedidoItem;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,  Data.DB, Vcl.Menus,
+  Vcl.StdCtrls,  System.ImageList, Vcl.ImgList, Vcl.ComCtrls, Vcl.ToolWin,DateUtils, Vcl.Grids,
+  Vcl.DBGrids, uDWDataset, UCBase, Vcl.Mask, Vcl.DBCtrls,
+  Data.Win.ADODB, untCPedido, untCPedidoProduto, untCProduto, untPedidoItem,
+  Vcl.ExtCtrls;
 
 type
   TfrmPedidoVenda = class(TForm)
     Panel1: TPanel;
-    cxLabel1: TcxLabel;
     Panel2: TPanel;
     dtPedidoVenda: TDataSource;
     dtCliente: TDataSource;
     dtPedidoItem: TDataSource;
-    cxButton4: TcxButton;
     restPedidoVenda: TADODataSet;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
@@ -89,6 +63,8 @@ type
     Label6: TLabel;
     restID: TADODataSet;
     restIDcodigo: TLargeintField;
+    Label7: TLabel;
+    Button2: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure cxButton4Click(Sender: TObject);
@@ -102,6 +78,7 @@ type
     procedure btCarregarPedidoClick(Sender: TObject);
     procedure btCancelarPedidoClick(Sender: TObject);
     procedure restPedidoVendaAfterScroll(DataSet: TDataSet);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
     procedure calcularValorTotal;
@@ -127,7 +104,7 @@ var
   Pedido : Tpedido;
   PedidoItem : TpedidoProduto;
 begin
-
+  try
   Pedido := Tpedido.Create;
   if vAcao = 1 then
     Pedido.Getidpedido := StrToInt(edCodigo.Text);
@@ -180,19 +157,32 @@ begin
 
   FreeAndNil(Pedido);
   FreeAndNil(PedidoItem);
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+  end;
 end;
 
 procedure TfrmPedidoVenda.Button1Click(Sender: TObject);
 begin
   if frmPedidoItem = nil then
         begin
+          try
           Application.CreateForm(TfrmPedidoItem,frmPedidoItem);
           frmPedidoItem.vAcaoItem := 0;
           frmPedidoItem.ShowModal;
           FreeAndNil(frmPedidoItem);
 
           calcularValorTotal;
+          Except
+            on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+          end;
         end;
+end;
+
+procedure TfrmPedidoVenda.Button2Click(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TfrmPedidoVenda.btCarregarPedidoClick(Sender: TObject);
@@ -202,6 +192,7 @@ var
   PedidoProduto : TpedidoProduto;
   ibQueryGenerica : TADOQuery;
 begin
+  try
   vidPedido := InputBox('Pedido', 'Digite o número do pedido', '');
 
   if vidPedido <> '' then
@@ -250,6 +241,10 @@ begin
       FreeAndNil(ibQueryGenerica);
       btSalvarClick(Sender);
     end;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 
 end;
@@ -261,6 +256,7 @@ var
   PedidoProduto : TpedidoProduto;
   ibQueryGenerica : TADOQuery;
 begin
+  try
   vidPedido := InputBox('Pedido', 'Digite o número do pedido', '');
 
   if vidPedido <> '' then
@@ -286,45 +282,21 @@ begin
       restPedidoItem.Parameters.ParamByName('vidpedido').Value := restPedidoVenda.FieldByName('idpedido').AsInteger;
       restPedidoItem.Open;
 
-
-      (*Pedido.CarregarrPedido;
-
-      PedidoProduto.Getidpedido :=  Pedido.Getidpedido;
-
-      edCliente.KeyValue := Pedido.Getidcliente;
-      edValorTotal.Text := FloatToStr(Pedido.Getvalortotal);
-
-
-      ibQueryGenerica := TADOQuery.Create(nil);
-      ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
-      ibQueryGenerica.SQL.Add('select * from cadpedidoproduto where idpedido = ' + IntToStr(Pedido.Getidpedido));
-      ibQueryGenerica.Open;
-
-      ibQueryGenerica.First;
-      while not ibQueryGenerica.Eof do
-        begin
-          restPedidoItem.Insert;
-          restPedidoItem.FieldByName('idpedido').AsInteger := restPedidoVenda.FieldByName('idpedido').AsInteger;
-          restPedidoItem.FieldByName('idproduto').AsInteger := ibQueryGenerica.FieldByName('idproduto').AsInteger;
-          restPedidoItem.FieldByName('quantidade').AsFloat := ibQueryGenerica.FieldByName('quantidade').AsFloat;
-          restPedidoItem.FieldByName('valorunit').AsFloat := ibQueryGenerica.FieldByName('valorunit').AsFloat;
-          restPedidoItem.FieldByName('valortotalproduto').AsFloat := ibQueryGenerica.FieldByName('valortotalproduto').AsFloat;
-
-          restPedidoItem.Post;
-          ibQueryGenerica.Next
-        end;
-                *)
-
       FreeAndNil(Pedido);
       FreeAndNil(PedidoProduto);
       FreeAndNil(ibQueryGenerica);
       btSalvarClick(Sender);
     end;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
 procedure TfrmPedidoVenda.btIncluirClick(Sender: TObject);
 begin
+  try
   if not (restPedidoVenda.State = dsBrowse)
     then restPedidoVenda.Cancel;
 
@@ -338,6 +310,10 @@ begin
   restPedidoItem.Close;
   restPedidoItem.Parameters.ParamByName('vidpedido').Value := 0;
   restPedidoItem.Open;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
@@ -345,6 +321,7 @@ procedure TfrmPedidoVenda.calcularValorTotal;
 var
   vValorTotal : Double;
 begin
+  try
   restPedidoItem.First;
   vValorTotal := 0;
   while not restPedidoItem.Eof do
@@ -353,8 +330,10 @@ begin
       restPedidoItem.Next;
     end;
 
-    //restPedidoVenda.FieldByName('valortotal').AsFloat := vValorTotal;
     edValorTotal.Text := FormatFloat('#,##0.00;(#,##0.00)',vValorTotal);
+    Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+  end;
 
 end;
 
@@ -372,6 +351,7 @@ if Key = VK_DELETE then
     begin
        if MessageDlg('Deseja Excluir esse item ?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
        begin
+          try
           if restPedidoItem.FieldByName('idpedidoproduto').IsNull then
             begin
               restPedidoItem.Delete;
@@ -390,6 +370,10 @@ if Key = VK_DELETE then
             end;
 
             calcularValorTotal;
+          Except
+            on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+          end;
        end;
     end;
 end;
@@ -401,12 +385,17 @@ begin
     begin
       if frmPedidoItem = nil then
         begin
+          try
           Application.CreateForm(TfrmPedidoItem,frmPedidoItem);
           frmPedidoItem.vAcaoItem := 1;
           frmPedidoItem.ShowModal;
           FreeAndNil(frmPedidoItem);
 
           calcularValorTotal;
+          Except
+              on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+          end;
         end;
     end;
 
@@ -416,8 +405,13 @@ end;
 procedure TfrmPedidoVenda.FormCreate(Sender: TObject);
 begin
   Screen.Cursor := crHourGlass;
+  try
   restPedidoVenda.Open;
   restCliente.Open;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
   Screen.Cursor := crDefault;
 end;
 
@@ -433,6 +427,7 @@ procedure TfrmPedidoVenda.PageControl1Change(Sender: TObject);
 begin
   if PageControl1.ActivePageIndex = 1 then
     begin
+      try
       edCodigo.Text := restPedidoVenda.FieldByName('idpedido').AsString;
       edDataEmissao.Date := restPedidoVenda.FieldByName('dataemissao').AsDateTime;
       edCliente.KeyValue := restPedidoVenda.FieldByName('idcliente').AsInteger;
@@ -446,18 +441,26 @@ begin
         vAcao := 0
       else
         vAcao := 1;
+      Except
+        on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
 
-
+      end;
     end
   else
     begin
+      try
       restPedidoVenda.Close;
       restPedidoVenda.Open;
+      Except
+          on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+      end;
     end;
 end;
 
 procedure TfrmPedidoVenda.restPedidoVendaAfterScroll(DataSet: TDataSet);
 begin
+  try
   if (restPedidoVenda.FieldByName('idcliente').IsNull) and (not restPedidoVenda.FieldByName('idpedido').IsNull)  then
     begin
       btCarregarPedido.Visible := True;
@@ -468,6 +471,10 @@ begin
       btCarregarPedido.Visible := False;
       btCancelarPedido.Visible := False;
     end;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 end;
 
 end.

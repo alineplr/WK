@@ -2,7 +2,7 @@ unit untCPedidoProduto;
 
 interface
 
-uses System.SysUtils, Data.Win.ADODB, untDataModuleWK, untCProduto;
+uses System.SysUtils, Data.Win.ADODB, untDataModuleWK, untCProduto, Dialogs;
 
  type TpedidoProduto = class
 
@@ -56,6 +56,7 @@ function TpedidoProduto.ApagarItenPedido: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -68,6 +69,10 @@ begin
     Result := False;
 
   FreeAndNil(ibQueryGenerica);
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
@@ -75,6 +80,7 @@ function TpedidoProduto.ApagarPedidoProduto: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -87,6 +93,10 @@ begin
     Result := False;
 
   FreeAndNil(ibQueryGenerica);
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
@@ -94,6 +104,7 @@ function TpedidoProduto.ConsultarPedidoProduto: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -106,6 +117,9 @@ begin
     Result := False;
 
   FreeAndNil(ibQueryGenerica);
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+  end;
 end;
 
 constructor TpedidoProduto.Create;
@@ -129,7 +143,7 @@ function TpedidoProduto.SalvarPedidoProduto: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
-
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
 
@@ -166,6 +180,10 @@ begin
   FreeAndNil(ibQueryGenerica);
 
   Result := True;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 

@@ -2,7 +2,7 @@ unit untCProduto;
 
 interface
 
-uses System.SysUtils, Data.Win.ADODB, untDataModuleWK;
+uses System.SysUtils, Data.Win.ADODB, untDataModuleWK, Dialogs;
 
  type TProduto = class
 
@@ -50,6 +50,7 @@ function TProduto.ConsultarProduto: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -74,6 +75,10 @@ begin
     end;
 
   FreeAndNil(ibQueryGenerica);
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 end;
 
 constructor TProduto.Create;

@@ -2,7 +2,7 @@ unit untCPedido;
 
 interface
 
-uses System.SysUtils, Data.Win.ADODB, untDataModuleWK;
+uses System.SysUtils, Data.Win.ADODB, untDataModuleWK, Dialogs;
 
  type Tpedido = class
 
@@ -48,10 +48,15 @@ implementation
 constructor Tpedido.Create;
 begin
   // metodo contrutor
+  try
   FGetidpedido := 0;
   FGetdataemissao := Date;
   FGetidcliente := 0;
   FGetvalortotal := 0;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
@@ -86,6 +91,7 @@ function Tpedido.SalvarPedido: Boolean;
     ibQueryGenerica : TADOQuery;
 begin
 
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
 
@@ -123,12 +129,17 @@ begin
   FreeAndNil(ibQueryGenerica);
 
   Result := True;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 end;
 
 function Tpedido.ApagarPedido: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -141,6 +152,10 @@ begin
     Result := False;
 
   FreeAndNil(ibQueryGenerica);
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
@@ -148,6 +163,7 @@ function Tpedido.CarregarrPedido: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -172,6 +188,10 @@ begin
 
       Result := False;
     end;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 
 end;
@@ -180,6 +200,7 @@ function Tpedido.ConsultarPedido: Boolean;
 var
     ibQueryGenerica : TADOQuery;
 begin
+  try
   ibQueryGenerica := TADOQuery.Create(nil);
 
   ibQueryGenerica.Connection := DataModuleWK.ADOConnectionwk;
@@ -190,6 +211,10 @@ begin
     Result := True
   else
     Result := False;
+  Except
+    on E : Exception do ShowMessage(E.ClassName + 'erro gerado, com mensagem: ' + E.Message);
+
+  end;
 
 end;
 
